@@ -1,17 +1,23 @@
+# Estágio de compilação
 FROM ubuntu:latest AS build
 
 RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
+RUN apt-get install -y openjdk-17-jdk
+RUN apt-get install -y maven
+
+WORKDIR /app
 
 COPY . .
-
-RUN apt-get install maven -y
 RUN mvn clean install
 
+# Estágio de execução
 FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=build /target/todolist.jar app.jar
+WORKDIR /app
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Copia o arquivo JAR da etapa de compilação
+COPY --from=build /app/target/todolist.jar todolist.jar
+
+ENTRYPOINT ["java", "-jar", "todolist.jar"]
