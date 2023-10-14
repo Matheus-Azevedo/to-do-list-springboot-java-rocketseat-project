@@ -1,0 +1,76 @@
+.
+├── Dockerfile
+├── HELP.md
+├── README.md
+├── estrutura_projeto.txt
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── br
+│   │   │       └── com
+│   │   │           └── matheuseduardo
+│   │   │               └── todolist
+│   │   │                   ├── TodolistApplication.java
+│   │   │                   ├── errors
+│   │   │                   │   └── ExceptionHandlerController.java
+│   │   │                   ├── filter
+│   │   │                   │   └── FilterTaskAuth.java
+│   │   │                   ├── task
+│   │   │                   │   ├── ITaskRepository.java
+│   │   │                   │   ├── TaskController.java
+│   │   │                   │   └── TaskModel.java
+│   │   │                   ├── user
+│   │   │                   │   ├── IUserRepository.java
+│   │   │                   │   ├── UserController.java
+│   │   │                   │   └── UserModel.java
+│   │   │                   └── utils
+│   │   │                       └── Utils.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── br
+│               └── com
+│                   └── matheuseduardo
+│                       └── todolist
+│                           └── TodolistApplicationTests.java
+└── target
+    ├── classes
+    │   ├── application.properties
+    │   └── br
+    │       └── com
+    │           └── matheuseduardo
+    │               └── todolist
+    │                   ├── TodolistApplication.class
+    │                   ├── errors
+    │                   │   └── ExceptionHandlerController.class
+    │                   ├── filter
+    │                   │   └── FilterTaskAuth.class
+    │                   ├── task
+    │                   │   ├── ITaskRepository.class
+    │                   │   ├── TaskController.class
+    │                   │   └── TaskModel.class
+    │                   ├── user
+    │                   │   ├── IUserRepository.class
+    │                   │   ├── UserController.class
+    │                   │   └── UserModel.class
+    │                   └── utils
+    │                       └── Utils.class
+    ├── generated-sources
+    │   └── annotations
+    ├── generated-test-sources
+    │   └── test-annotations
+    ├── test-classes
+    │   └── br
+    │       └── com
+    │           └── matheuseduardo
+    │               └── todolist
+    │                   └── TodolistApplicationTests.class
+    └── todolist.jar
+
+41 directories, 32 files
