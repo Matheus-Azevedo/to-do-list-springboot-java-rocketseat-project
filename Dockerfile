@@ -8,16 +8,15 @@ RUN apt-get install -y maven
 WORKDIR /app
 
 COPY . .
-RUN mvn clean install
 
 # Estágio de execução
 FROM openjdk:17-jdk-slim
 
+RUN mvn clean install
+
 EXPOSE 8080
 
-WORKDIR /app
-
 # Copia o arquivo JAR da etapa de compilação
-COPY --from=build /app/target/todolist.jar todolist.jar
+COPY --from=build /target/todolist-1.0.1-LASTEST.jar app.jar
 
-ENTRYPOINT ["java", "-jar", "todolist.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
